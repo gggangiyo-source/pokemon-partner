@@ -1,6 +1,6 @@
 ﻿(() => {
-    const ROOT_ID = "spt_min_pet_root";
-    const PET_ID = "spt_pet_actor";
+    const ROOT_ID = "pknm_min_pet_root";
+    const PET_ID = "pknm_pet_actor";
     const KEY = "pokemon_pet_min_settings_v1";
     const SIZE_MIN = 48;
     const SIZE_MAX = 280;
@@ -106,11 +106,11 @@
         if (state.actor) return;
         const actor = document.createElement("div");
         actor.id = PET_ID;
-        actor.innerHTML = `<img id="spt_pet_actor_img" alt="pet" draggable="false" /><div id="spt_pet_actor_placeholder">PET</div><div id="spt_pet_bubble" hidden>🙂</div>`;
+        actor.innerHTML = `<img id="pknm_pet_actor_img" alt="pet" draggable="false" /><div id="pknm_pet_actor_placeholder">PET</div><div id="pknm_pet_bubble" hidden>🙂</div>`;
         document.body.appendChild(actor);
         state.actor = actor;
-        state.actorImg = actor.querySelector("#spt_pet_actor_img");
-        state.bubbleEl = actor.querySelector("#spt_pet_bubble");
+        state.actorImg = actor.querySelector("#pknm_pet_actor_img");
+        state.bubbleEl = actor.querySelector("#pknm_pet_bubble");
 
         actor.addEventListener("pointerdown", (evt) => {
             state.draggingPet = true;
@@ -183,14 +183,14 @@
 
     function playLevelUpEffect() {
         if (!state.actor) return;
-        state.actor.classList.add("spt-levelup");
+        state.actor.classList.add("pknm-levelup");
         window.setTimeout(() => {
-            state.actor?.classList.remove("spt-levelup");
+            state.actor?.classList.remove("pknm-levelup");
         }, 1100);
 
         for (let i = 0; i < 9; i++) {
             const p = document.createElement("span");
-            p.className = "spt-spark";
+            p.className = "pknm-spark";
             const ang = (Math.PI * 2 * i) / 9;
             const dist = 26 + Math.random() * 24;
             p.style.setProperty("--dx", `${Math.cos(ang) * dist}px`);
@@ -334,7 +334,7 @@
         if (!state.actor || state.toyActive) return;
         state.toyActive = true;
         const toy = document.createElement("div");
-        toy.className = "spt-toy";
+        toy.className = "pknm-toy";
         const toyEmoji = ["🎾", "⭐", "🫧"][Math.floor(Math.random() * 3)];
         toy.textContent = toyEmoji;
         document.body.appendChild(toy);
@@ -377,17 +377,17 @@
         state.actor.style.height = `${state.size}px`;
         state.actor.style.display = state.enabled ? "block" : "none";
         state.actor.style.filter = `drop-shadow(0 8px 14px rgba(0, 0, 0, ${clamp(state.shadowOpacity, 0, 1)}))`;
-        const placeholder = state.actor.querySelector("#spt_pet_actor_placeholder");
+        const placeholder = state.actor.querySelector("#pknm_pet_actor_placeholder");
         if (state.imageData) {
             state.actorImg.src = state.imageData;
             state.actorImg.style.display = "block";
             placeholder.style.display = "none";
             const staticImage = state.imageType === "image/png" || state.imageType === "image/jpeg" || state.imageType === "image/jpg";
-            state.actor.classList.toggle("spt-static-wiggle", staticImage);
+            state.actor.classList.toggle("pknm-static-wiggle", staticImage);
         } else {
             state.actorImg.style.display = "none";
             placeholder.style.display = "grid";
-            state.actor.classList.remove("spt-static-wiggle");
+            state.actor.classList.remove("pknm-static-wiggle");
         }
         setPetPosition(state.x, state.y);
     }
@@ -414,26 +414,26 @@
     }
 
     function bindUi(root) {
-        const fab = root.querySelector("#spt_min_pet_btn");
-        const panel = root.querySelector("#spt_min_pet_panel");
-        const runBtn = root.querySelector("#spt_min_pet_toggle");
-        const autoBtn = root.querySelector("#spt_min_pet_auto");
-        const sizeRange = root.querySelector("#spt_min_pet_size");
-        const sizePx = root.querySelector("#spt_min_pet_size_px");
-        const speedRange = root.querySelector("#spt_min_pet_speed");
-        const gifSpeed = root.querySelector("#spt_min_pet_gif_speed");
-        const shadow = root.querySelector("#spt_min_pet_shadow");
-        const fileInput = root.querySelector("#spt_min_pet_file");
-        const fileName = root.querySelector("#spt_min_pet_file_name");
-        const tabBasic = root.querySelector("#spt_tab_basic");
-        const tabAdvanced = root.querySelector("#spt_tab_advanced");
-        const paneBasic = root.querySelector("#spt_pane_basic");
-        const paneAdvanced = root.querySelector("#spt_pane_advanced");
-        const feedBtn = root.querySelector("#spt_min_pet_feed");
-        const petBtn = root.querySelector("#spt_min_pet_pet");
-        const jumpBtn = root.querySelector("#spt_min_pet_jump");
-        const toyBtn = root.querySelector("#spt_min_pet_toy");
-        const sfxBtn = root.querySelector("#spt_min_pet_sfx");
+        const fab = root.querySelector("#pknm_min_pet_btn");
+        const panel = root.querySelector("#pknm_min_pet_panel");
+        const runBtn = root.querySelector("#pknm_min_pet_toggle");
+        const autoBtn = root.querySelector("#pknm_min_pet_auto");
+        const sizeRange = root.querySelector("#pknm_min_pet_size");
+        const sizePx = root.querySelector("#pknm_min_pet_size_px");
+        const speedRange = root.querySelector("#pknm_min_pet_speed");
+        const gifSpeed = root.querySelector("#pknm_min_pet_gif_speed");
+        const shadow = root.querySelector("#pknm_min_pet_shadow");
+        const fileInput = root.querySelector("#pknm_min_pet_file");
+        const fileName = root.querySelector("#pknm_min_pet_file_name");
+        const tabBasic = root.querySelector("#pknm_tab_basic");
+        const tabAdvanced = root.querySelector("#pknm_tab_advanced");
+        const paneBasic = root.querySelector("#pknm_pane_basic");
+        const paneAdvanced = root.querySelector("#pknm_pane_advanced");
+        const feedBtn = root.querySelector("#pknm_min_pet_feed");
+        const petBtn = root.querySelector("#pknm_min_pet_pet");
+        const jumpBtn = root.querySelector("#pknm_min_pet_jump");
+        const toyBtn = root.querySelector("#pknm_min_pet_toy");
+        const sfxBtn = root.querySelector("#pknm_min_pet_sfx");
 
         const renderUi = () => {
             runBtn.textContent = state.enabled ? "Stop" : "Start";
@@ -550,8 +550,8 @@
     }
 
     function renderHud() {
-        const lv = document.getElementById("spt_pet_level");
-        const xp = document.getElementById("spt_pet_xp");
+        const lv = document.getElementById("pknm_pet_level");
+        const xp = document.getElementById("pknm_pet_xp");
         if (!lv || !xp) return;
         lv.textContent = `Lv.${state.level}`;
         xp.textContent = `Affinity ${state.affinity}/${state.level * 100}`;
@@ -562,55 +562,55 @@
         const root = document.createElement("div");
         root.id = ROOT_ID;
         root.innerHTML = `
-            <button id="spt_min_pet_btn" type="button" title="Pokemon Pet"></button>
-            <div id="spt_min_pet_panel" hidden>
-                <div class="spt-title">Pokemon Pet</div>
-                <div class="spt-tabs">
-                    <button id="spt_tab_basic" type="button" class="spt-tab is-active">Basic</button>
-                    <button id="spt_tab_advanced" type="button" class="spt-tab">Advanced</button>
+            <button id="pknm_min_pet_btn" type="button" title="Pokemon Pet"></button>
+            <div id="pknm_min_pet_panel" hidden>
+                <div class="pknm-title">Pokemon Pet</div>
+                <div class="pknm-tabs">
+                    <button id="pknm_tab_basic" type="button" class="pknm-tab is-active">Basic</button>
+                    <button id="pknm_tab_advanced" type="button" class="pknm-tab">Advanced</button>
                 </div>
-                <div id="spt_pane_basic">
-                    <div class="spt-hud">
-                        <span id="spt_pet_level">Lv.1</span>
-                        <span id="spt_pet_xp">Affinity 0/100</span>
+                <div id="pknm_pane_basic">
+                    <div class="pknm-hud">
+                        <span id="pknm_pet_level">Lv.1</span>
+                        <span id="pknm_pet_xp">Affinity 0/100</span>
                     </div>
-                    <div class="spt-row">
-                        <button id="spt_min_pet_toggle" type="button">Start</button>
-                        <button id="spt_min_pet_auto" type="button">Auto: ON</button>
+                    <div class="pknm-row">
+                        <button id="pknm_min_pet_toggle" type="button">Start</button>
+                        <button id="pknm_min_pet_auto" type="button">Auto: ON</button>
                     </div>
-                    <div class="spt-row">
-                        <button id="spt_min_pet_feed" type="button">Feed</button>
-                        <button id="spt_min_pet_toy" type="button">Toy</button>
-                        <button id="spt_min_pet_pet" type="button">Pet</button>
-                        <button id="spt_min_pet_jump" type="button">Jump</button>
+                    <div class="pknm-row">
+                        <button id="pknm_min_pet_feed" type="button">Feed</button>
+                        <button id="pknm_min_pet_toy" type="button">Toy</button>
+                        <button id="pknm_min_pet_pet" type="button">Pet</button>
+                        <button id="pknm_min_pet_jump" type="button">Jump</button>
                     </div>
-                    <div class="spt-row">
+                    <div class="pknm-row">
                         <label>Size</label>
-                        <input id="spt_min_pet_size" type="range" min="48" max="280" step="1" />
-                        <input id="spt_min_pet_size_px" type="number" min="48" max="280" step="1" />
+                        <input id="pknm_min_pet_size" type="range" min="48" max="280" step="1" />
+                        <input id="pknm_min_pet_size_px" type="number" min="48" max="280" step="1" />
                     </div>
-                    <div class="spt-row">
-                        <input id="spt_min_pet_file" type="file" accept=".gif,.png,.jpg,.jpeg,image/gif,image/png,image/jpeg" />
-                        <label for="spt_min_pet_file" class="spt-upload-btn">Choose GIF/PNG/JPG</label>
+                    <div class="pknm-row">
+                        <input id="pknm_min_pet_file" type="file" accept=".gif,.png,.jpg,.jpeg,image/gif,image/png,image/jpeg" />
+                        <label for="pknm_min_pet_file" class="pknm-upload-btn">Choose GIF/PNG/JPG</label>
                     </div>
-                    <div id="spt_min_pet_file_name" class="spt-file-name">No image selected</div>
+                    <div id="pknm_min_pet_file_name" class="pknm-file-name">No image selected</div>
                 </div>
-                <div id="spt_pane_advanced" hidden>
-                    <div class="spt-row">
+                <div id="pknm_pane_advanced" hidden>
+                    <div class="pknm-row">
                         <label>Speed</label>
-                        <input id="spt_min_pet_speed" type="range" min="0.4" max="5" step="0.1" />
+                        <input id="pknm_min_pet_speed" type="range" min="0.4" max="5" step="0.1" />
                     </div>
-                    <div class="spt-row">
+                    <div class="pknm-row">
                         <label>GIF</label>
-                        <input id="spt_min_pet_gif_speed" type="range" min="0.4" max="3" step="0.1" />
+                        <input id="pknm_min_pet_gif_speed" type="range" min="0.4" max="3" step="0.1" />
                     </div>
-                    <div class="spt-row">
+                    <div class="pknm-row">
                         <label>Shadow</label>
-                        <input id="spt_min_pet_shadow" type="range" min="0" max="1" step="0.05" />
+                        <input id="pknm_min_pet_shadow" type="range" min="0" max="1" step="0.05" />
                     </div>
-                    <div class="spt-row">
+                    <div class="pknm-row">
                         <label>SFX</label>
-                        <button id="spt_min_pet_sfx" type="button">SFX: ON</button>
+                        <button id="pknm_min_pet_sfx" type="button">SFX: ON</button>
                     </div>
                 </div>
             </div>

@@ -4,25 +4,25 @@
    so index.js / script.js work without any changes.
    ========================================================= */
 
-#spt_min_pet_root {
+#pknm_min_pet_root {
     position: fixed;
     right: 16px;
     bottom: 16px;
     z-index: 99999;
     font-family: "Segoe UI", "Pretendard", "Noto Sans KR", -apple-system, sans-serif;
     touch-action: none;
-    --spt-red: #ee4b4b;
-    --spt-red-dark: #c62828;
-    --spt-panel-bg: #1c1d22;
-    --spt-panel-bg-soft: #24252c;
-    --spt-border: rgba(255, 255, 255, 0.08);
-    --spt-text: #f2f2f5;
-    --spt-text-dim: #9a9aa5;
+    --pknm-red: #ee4b4b;
+    --pknm-red-dark: #c62828;
+    --pknm-panel-bg: #1c1d22;
+    --pknm-panel-bg-soft: #24252c;
+    --pknm-border: rgba(255, 255, 255, 0.08);
+    --pknm-text: #f2f2f5;
+    --pknm-text-dim: #9a9aa5;
 }
 
 /* ---------- Launcher button ---------- */
 
-#spt_min_pet_btn {
+#pknm_min_pet_btn {
     width: 56px;
     height: 56px;
     border-radius: 999px;
@@ -38,59 +38,59 @@
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-#spt_min_pet_btn:hover {
+#pknm_min_pet_btn:hover {
     transform: translateY(-2px) scale(1.04);
     box-shadow:
         0 12px 22px rgba(0, 0, 0, 0.4),
         0 0 0 3px rgba(255, 255, 255, 0.12) inset;
 }
 
-#spt_min_pet_btn:active {
+#pknm_min_pet_btn:active {
     transform: translateY(0) scale(0.97);
 }
 
 /* ---------- Panel ---------- */
 
-#spt_min_pet_panel {
+#pknm_min_pet_panel {
     margin-top: 10px;
     width: 300px;
     padding: 16px;
     border-radius: 16px;
-    border: 1px solid var(--spt-border);
-    background: var(--spt-panel-bg);
-    color: var(--spt-text);
+    border: 1px solid var(--pknm-border);
+    background: var(--pknm-panel-bg);
+    color: var(--pknm-text);
     box-shadow:
         0 20px 40px rgba(0, 0, 0, 0.5),
         0 0 0 1px rgba(255, 255, 255, 0.03) inset;
     box-sizing: border-box;
 }
 
-#spt_min_pet_panel .spt-title {
+#pknm_min_pet_panel .pknm-title {
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 0.02em;
-    color: var(--spt-text);
+    color: var(--pknm-text);
     margin-bottom: 12px;
     padding-bottom: 10px;
-    border-bottom: 1px solid var(--spt-border);
+    border-bottom: 1px solid var(--pknm-border);
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-#spt_min_pet_panel .spt-title::before {
+#pknm_min_pet_panel .pknm-title::before {
     content: "";
     width: 10px;
     height: 10px;
     border-radius: 999px;
-    background: linear-gradient(180deg, var(--spt-red) 50%, #fff 50%);
+    background: linear-gradient(180deg, var(--pknm-red) 50%, #fff 50%);
     border: 1.5px solid #111;
     flex-shrink: 0;
 }
 
 /* ---------- Tabs ---------- */
 
-#spt_min_pet_panel .spt-tabs {
+#pknm_min_pet_panel .pknm-tabs {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 6px;
@@ -100,31 +100,31 @@
     border-radius: 10px;
 }
 
-#spt_min_pet_panel .spt-tab {
+#pknm_min_pet_panel .pknm-tab {
     border: none;
     border-radius: 8px;
     padding: 7px 8px;
     background: transparent;
-    color: var(--spt-text-dim);
+    color: var(--pknm-text-dim);
     font-weight: 600;
     font-size: 12.5px;
     cursor: pointer;
     transition: background 0.15s ease, color 0.15s ease;
 }
 
-#spt_min_pet_panel .spt-tab:hover {
-    color: var(--spt-text);
+#pknm_min_pet_panel .pknm-tab:hover {
+    color: var(--pknm-text);
 }
 
-#spt_min_pet_panel .spt-tab.is-active {
-    background: var(--spt-red);
+#pknm_min_pet_panel .pknm-tab.is-active {
+    background: var(--pknm-red);
     color: #fff;
     box-shadow: 0 2px 8px rgba(238, 75, 75, 0.4);
 }
 
 /* ---------- Rows (label + control) ---------- */
 
-#spt_min_pet_panel .spt-row {
+#pknm_min_pet_panel .pknm-row {
     display: grid;
     grid-template-columns: 52px 1fr;
     align-items: center;
@@ -133,33 +133,33 @@
 }
 
 /* Rows that only contain buttons (no label) get an even grid */
-#spt_min_pet_panel .spt-row:has(#spt_min_pet_toggle),
-#spt_min_pet_panel .spt-row:has(#spt_min_pet_feed) {
+#pknm_min_pet_panel .pknm-row:has(#pknm_min_pet_toggle),
+#pknm_min_pet_panel .pknm-row:has(#pknm_min_pet_feed) {
     grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 }
 
-#spt_min_pet_panel label {
+#pknm_min_pet_panel label {
     font-size: 12px;
     font-weight: 600;
-    color: var(--spt-text-dim);
+    color: var(--pknm-text-dim);
     white-space: nowrap;
 }
 
 /* ---------- Inputs ---------- */
 
-#spt_min_pet_panel input[type="range"] {
+#pknm_min_pet_panel input[type="range"] {
     width: 100%;
-    accent-color: var(--spt-red);
+    accent-color: var(--pknm-red);
     height: 4px;
     cursor: pointer;
 }
 
-#spt_min_pet_panel input[type="number"] {
+#pknm_min_pet_panel input[type="number"] {
     width: 100%;
     border-radius: 8px;
-    border: 1px solid var(--spt-border);
-    background: var(--spt-panel-bg-soft);
-    color: var(--spt-text);
+    border: 1px solid var(--pknm-border);
+    background: var(--pknm-panel-bg-soft);
+    color: var(--pknm-text);
     padding: 6px 8px;
     font-weight: 600;
     font-size: 12.5px;
@@ -168,23 +168,23 @@
     transition: border-color 0.15s ease;
 }
 
-#spt_min_pet_panel input[type="number"]:focus {
+#pknm_min_pet_panel input[type="number"]:focus {
     outline: none;
-    border-color: var(--spt-red);
+    border-color: var(--pknm-red);
 }
 
 /* Size row: slider + number box side by side, evenly spaced */
-#spt_pane_basic .spt-row:has(#spt_min_pet_size) {
+#pknm_pane_basic .pknm-row:has(#pknm_min_pet_size) {
     grid-template-columns: 52px 1fr 60px;
 }
 
 /* ---------- Buttons ---------- */
 
-#spt_min_pet_panel button {
-    border: 1px solid var(--spt-border);
+#pknm_min_pet_panel button {
+    border: 1px solid var(--pknm-border);
     border-radius: 9px;
-    background: var(--spt-panel-bg-soft);
-    color: var(--spt-text);
+    background: var(--pknm-panel-bg-soft);
+    color: var(--pknm-text);
     padding: 8px 10px;
     font-weight: 600;
     font-size: 12.5px;
@@ -193,72 +193,72 @@
     white-space: nowrap;
 }
 
-#spt_min_pet_panel button:hover {
+#pknm_min_pet_panel button:hover {
     background: #303138;
     border-color: rgba(255, 255, 255, 0.18);
 }
 
-#spt_min_pet_panel button:active {
+#pknm_min_pet_panel button:active {
     transform: scale(0.96);
 }
 
-#spt_min_pet_toggle,
-#spt_min_pet_toggle.spt-active,
-#spt_min_pet_toggle[data-active="true"] {
-    border-color: var(--spt-red-dark);
-    background: linear-gradient(180deg, var(--spt-red), var(--spt-red-dark));
+#pknm_min_pet_toggle,
+#pknm_min_pet_toggle.pknm-active,
+#pknm_min_pet_toggle[data-active="true"] {
+    border-color: var(--pknm-red-dark);
+    background: linear-gradient(180deg, var(--pknm-red), var(--pknm-red-dark));
     color: #fff;
 }
 
-#spt_min_pet_toggle:hover {
+#pknm_min_pet_toggle:hover {
     filter: brightness(1.08);
 }
 
 /* ---------- Panes ---------- */
 
-#spt_pane_basic,
-#spt_pane_advanced {
+#pknm_pane_basic,
+#pknm_pane_advanced {
     border-radius: 12px;
     padding: 2px 0 0;
 }
 
 /* ---------- HUD (level / affinity) ---------- */
 
-.spt-hud {
+.pknm-hud {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 8px 12px;
-    border: 1px solid var(--spt-border);
+    border: 1px solid var(--pknm-border);
     border-radius: 10px;
-    background: var(--spt-panel-bg-soft);
-    color: var(--spt-text);
+    background: var(--pknm-panel-bg-soft);
+    color: var(--pknm-text);
     font-size: 12px;
     font-weight: 700;
     margin-bottom: 4px;
 }
 
-#spt_pet_level {
-    color: var(--spt-red);
+#pknm_pet_level {
+    color: var(--pknm-red);
 }
 
-#spt_pet_xp {
-    color: var(--spt-text-dim);
+#pknm_pet_xp {
+    color: var(--pknm-text-dim);
     font-weight: 600;
 }
 
 /* ---------- Action buttons (Feed / Toy / Pet / Jump) ---------- */
 
-#spt_min_pet_feed,
-#spt_min_pet_toy,
-#spt_min_pet_pet,
-#spt_min_pet_jump {
+#pknm_min_pet_feed,
+#pknm_min_pet_toy,
+#pknm_min_pet_pet,
+#pknm_min_pet_jump {
     flex: 1;
 }
 
 /* ---------- Floating toy emoji ---------- */
 
-.spt-toy {
+.pknm-toy {
     position: fixed;
     z-index: 100001;
     font-size: 24px;
@@ -270,15 +270,15 @@
 
 /* ---------- File upload ---------- */
 
-#spt_min_pet_file {
+#pknm_min_pet_file {
     display: none;
 }
 
-#spt_min_pet_panel .spt-row:has(#spt_min_pet_file) {
+#pknm_min_pet_panel .pknm-row:has(#pknm_min_pet_file) {
     grid-template-columns: 1fr;
 }
 
-.spt-upload-btn {
+.pknm-upload-btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -289,7 +289,7 @@
     border: 1px dashed rgba(255, 255, 255, 0.28);
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.03);
-    color: var(--spt-text);
+    color: var(--pknm-text);
     padding: 8px 12px;
     cursor: pointer;
     font-weight: 600;
@@ -302,20 +302,20 @@
     transition: border-color 0.15s ease, background 0.15s ease;
 }
 
-.spt-upload-btn::before {
+.pknm-upload-btn::before {
     content: "📁";
     font-size: 13px;
 }
 
-.spt-upload-btn:hover {
-    border-color: var(--spt-red);
+.pknm-upload-btn:hover {
+    border-color: var(--pknm-red);
     background: rgba(238, 75, 75, 0.08);
 }
 
-.spt-file-name {
+.pknm-file-name {
     margin-top: 8px;
     font-size: 11.5px;
-    color: var(--spt-text-dim);
+    color: var(--pknm-text-dim);
     font-weight: 500;
     text-align: center;
     white-space: nowrap;
@@ -325,7 +325,7 @@
 
 /* ---------- Pet actor on screen ---------- */
 
-#spt_pet_actor {
+#pknm_pet_actor {
     position: fixed;
     left: 120px;
     top: 120px;
@@ -338,23 +338,23 @@
     overflow: visible;
 }
 
-#spt_pet_actor:active {
+#pknm_pet_actor:active {
     cursor: grabbing;
 }
 
-#spt_pet_actor img {
+#pknm_pet_actor img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     pointer-events: none;
 }
 
-#spt_pet_actor.spt-static-wiggle img {
-    animation: sptStaticWiggle 0.9s ease-in-out infinite;
+#pknm_pet_actor.pknm-static-wiggle img {
+    animation: pknmStaticWiggle 0.9s ease-in-out infinite;
     transform-origin: 50% 80%;
 }
 
-#spt_pet_actor_placeholder {
+#pknm_pet_actor_placeholder {
     width: 100%;
     height: 100%;
     border-radius: 14px;
@@ -368,7 +368,7 @@
     background: rgba(0, 0, 0, 0.15);
 }
 
-#spt_pet_bubble {
+#pknm_pet_bubble {
     position: absolute;
     left: 50%;
     top: -42px;
@@ -389,7 +389,7 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
-#spt_pet_bubble::after {
+#pknm_pet_bubble::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -403,21 +403,21 @@
 
 /* ---------- Level up effect ---------- */
 
-#spt_pet_actor.spt-levelup {
-    animation: sptLevelUpShake 0.95s ease;
+#pknm_pet_actor.pknm-levelup {
+    animation: pknmLevelUpShake 0.95s ease;
 }
 
-#spt_pet_actor.spt-levelup::before {
+#pknm_pet_actor.pknm-levelup::before {
     content: "";
     position: absolute;
     inset: -8px;
     border-radius: 18px;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 70%);
     pointer-events: none;
-    animation: sptLevelUpFlash 0.95s ease;
+    animation: pknmLevelUpFlash 0.95s ease;
 }
 
-.spt-spark {
+.pknm-spark {
     position: absolute;
     width: 6px;
     height: 6px;
@@ -426,11 +426,11 @@
     border: 1px solid #fff;
     pointer-events: none;
     transform: translate(-50%, -50%);
-    animation: sptSparkFly 0.85s ease-out forwards;
+    animation: pknmSparkFly 0.85s ease-out forwards;
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
 }
 
-@keyframes sptLevelUpShake {
+@keyframes pknmLevelUpShake {
     0% { transform: scale(1) translateX(0); }
     20% { transform: scale(1.14) translateX(-2px); }
     35% { transform: scale(1.14) translateX(2px); }
@@ -439,13 +439,13 @@
     100% { transform: scale(1) translateX(0); }
 }
 
-@keyframes sptLevelUpFlash {
+@keyframes pknmLevelUpFlash {
     0% { opacity: 0; }
     18% { opacity: 1; }
     100% { opacity: 0; }
 }
 
-@keyframes sptSparkFly {
+@keyframes pknmSparkFly {
     0% {
         opacity: 1;
         transform: translate(-50%, -50%) scale(0.9);
@@ -456,7 +456,7 @@
     }
 }
 
-@keyframes sptStaticWiggle {
+@keyframes pknmStaticWiggle {
     0% { transform: rotate(0deg) translateX(0); }
     25% { transform: rotate(-4deg) translateX(-2px); }
     50% { transform: rotate(0deg) translateX(0); }
